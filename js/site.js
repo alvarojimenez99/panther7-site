@@ -105,6 +105,14 @@
       'nos.v3p':'Every payment with its reference.',
       'nos.aliados':'Partners',
       'nos.slot':'Partner logo',
+      'nav.inicio':'Home',
+      'nav.portal':'Portal',
+      'at.como':'The steps, from account to payment.',
+      'at.proy':'Examples and a simulator.',
+      'at.portal':'See your dashboard inside.',
+      'at.seg':'Transparency and FAQ.',
+      'at.nos':'Who we are and who we work with.',
+      'at.con':'Write or call us.',
       'pie.aviso':'All investing involves risk, including partial or total loss of capital. Past results do not guarantee future results. Review each project\'s documentation before investing.'
     },
     pt: {
@@ -210,6 +218,14 @@
       'nos.v3p':'Cada pagamento com sua referência.',
       'nos.aliados':'Parceiros',
       'nos.slot':'Logo do parceiro',
+      'nav.inicio':'Início',
+      'nav.portal':'Portal',
+      'at.como':'Os passos, da conta ao pagamento.',
+      'at.proy':'Exemplos e um simulador.',
+      'at.portal':'Veja seu painel por dentro.',
+      'at.seg':'Transparência e perguntas frequentes.',
+      'at.nos':'Quem somos e com quem trabalhamos.',
+      'at.con':'Escreva ou ligue.',
       'pie.aviso':'Todo investimento envolve risco, incluindo perda parcial ou total do capital. Resultados passados não garantem resultados futuros. Consulte a documentação de cada projeto antes de investir.'
     }
   };
@@ -279,6 +295,39 @@
     document.getElementById('sim-total').textContent = fmtN(m + g) + ' USDT';
   }
   if (sm && sp) { sm.addEventListener('input', simular); sp.addEventListener('input', simular); simular(); }
+
+
+  // vistas: una sección a la vez, sin scroll largo
+  var VISTAS = ['inicio', 'como', 'proyectos', 'portal', 'seguridad', 'nosotros', 'contacto'];
+  var bloques = document.querySelectorAll('[data-vista]');
+  document.documentElement.classList.add('con-vistas');
+  function vistaDe(id) {
+    if (VISTAS.indexOf(id) > -1) return id;
+    var el = document.getElementById(id);
+    var b = el && el.closest('[data-vista]');
+    return b ? b.getAttribute('data-vista').split(' ')[0] : null;
+  }
+  function mostrar(v, id) {
+    bloques.forEach(function (b) { b.hidden = b.getAttribute('data-vista').split(' ').indexOf(v) < 0; });
+    document.querySelectorAll('.links a').forEach(function (a) {
+      var on = a.getAttribute('href') === '#' + v;
+      if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    var main = document.getElementById('contenido'); main.classList.remove('entra'); void main.offsetWidth; main.classList.add('entra');
+    var t = id && id !== v ? document.getElementById(id) : null;
+    if (t) t.scrollIntoView(); else window.scrollTo(0, 0);
+    var act = document.querySelector('.links a[aria-current]'); if (act && act.scrollIntoView) act.scrollIntoView({ inline: 'center', block: 'nearest' });
+  }
+  function desdeHash() {
+    var id = decodeURIComponent(location.hash.slice(1)); mostrar(vistaDe(id) || 'inicio', id);
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]'); if (!a) return;
+    var id = a.getAttribute('href').slice(1); if (!id || id === 'contenido' || !vistaDe(id)) return;
+    e.preventDefault(); history.pushState(null, '', '#' + id); desdeHash();
+  });
+  window.addEventListener('popstate', desdeHash);
+  desdeHash();
 
   var nav = document.getElementById('nav');
   var alScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };

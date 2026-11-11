@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 <a class="skip" href="#contenido" data-i18n="skip">Saltar al contenido</a>
@@ -25,9 +25,11 @@
     <img src="img/panther-gold.svg" alt="" width="44" height="19"><span>Panther<b>7</b></span>
   </a>
   <nav class="links" aria-label="Principal">
+    <a href="#inicio" data-i18n="nav.inicio">Inicio</a>
     <a href="#como" data-i18n="nav.como">Cómo funciona</a>
-    <a href="#ejemplos" data-i18n="nav.proy">Proyectos</a>
-    <a href="#porque" data-i18n="nav.seg">Seguridad</a>
+    <a href="#proyectos" data-i18n="nav.proy">Proyectos</a>
+    <a href="#portal" data-i18n="nav.portal">Portal</a>
+    <a href="#seguridad" data-i18n="nav.seg">Seguridad</a>
     <a href="#nosotros" data-i18n="nav.nos">Nosotros</a>
     <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
   </nav>
@@ -43,7 +45,7 @@
 </header>
 
 <main id="contenido">
-  <section class="hero" id="inicio">
+  <section class="hero" id="inicio" data-vista="inicio">
     <img class="hero-pantera" src="img/panther-gold.svg" alt="" aria-hidden="true">
     <div class="hero-txt">
       <h1 data-i18n="hero.h1">Invierte en activos reales, desde tu wallet en USDT.</h1>
@@ -69,7 +71,7 @@
     </figure>
   </section>
 
-  <section class="cifras" aria-label="Panther7 en cifras">
+  <section class="cifras" data-vista="inicio" aria-label="Panther7 en cifras">
     <!-- CIFRAS DE EJEMPLO: reemplazar por las reales antes de publicar -->
     <div><strong>12</strong><span data-i18n="cif.1">Proyectos tokenizados</span></div>
     <div><strong>1,480</strong><span data-i18n="cif.2">Inversionistas verificados</span></div>
@@ -78,7 +80,16 @@
     <p class="nota-borrador">Cifras de ejemplo (borrador): reemplazar por las reales.</p>
   </section>
 
-  <section class="seccion" id="como">
+  <section class="atajos" data-vista="inicio" aria-label="Explora">
+    <a href="#como"><b data-i18n="nav.como">Cómo funciona</b><span data-i18n="at.como">Los pasos, de la cuenta al pago.</span></a>
+    <a href="#proyectos"><b data-i18n="nav.proy">Proyectos</b><span data-i18n="at.proy">Ejemplos y un simulador.</span></a>
+    <a href="#portal"><b data-i18n="nav.portal">Portal</b><span data-i18n="at.portal">Mira tu panel por dentro.</span></a>
+    <a href="#seguridad"><b data-i18n="nav.seg">Seguridad</b><span data-i18n="at.seg">Transparencia y preguntas frecuentes.</span></a>
+    <a href="#nosotros"><b data-i18n="nav.nos">Nosotros</b><span data-i18n="at.nos">Quiénes somos y con quién trabajamos.</span></a>
+    <a href="#contacto"><b data-i18n="nav.contacto">Contacto</b><span data-i18n="at.con">Escríbenos o llámanos.</span></a>
+  </section>
+
+  <section class="seccion" id="como" data-vista="como">
     <div class="cabecera">
       <h2 data-i18n="como.h2">Cuatro pasos, todo desde un solo lugar</h2>
       <p data-i18n="como.p">Sin papeleo disperso: creas tu cuenta, fondeas, eliges y haces seguimiento en el mismo portal.</p>
@@ -91,7 +102,7 @@
     </ol>
   </section>
 
-  <section class="seccion" id="fondeo">
+  <section class="seccion" id="fondeo" data-vista="como">
     <div class="cabecera"><h2 data-i18n="fon.h2">Fondea como te convenga</h2><p data-i18n="fon.p">Todo se acredita 1 a 1 en USDT.</p></div>
     <ul class="metodos">
       <li><b>USDT</b><span data-i18n="fon.ap">Envía desde tu wallet cripto y avisa tu envío.</span></li>
@@ -101,7 +112,7 @@
     </ul>
   </section>
 
-  <section class="seccion oscura vent" id="portal">
+  <section class="seccion oscura vent" id="portal" data-vista="portal">
     <div class="cabecera"><h2 data-i18n="ven.h2">Tu portal, a la vista</h2><p data-i18n="ven.p">Saldo, proyectos y movimientos en un solo lugar. Datos de ejemplo.</p></div>
     <div class="tabs" role="tablist" aria-label="Portal">
       <button role="tab" aria-selected="true" aria-controls="v1" id="t1" data-i18n="ven.t1">Panel</button>
@@ -133,7 +144,7 @@
     </div>
   </section>
 
-  <section class="seccion" id="ejemplos">
+  <section class="seccion" id="ejemplos" data-vista="proyectos">
     <div class="cabecera"><h2 data-i18n="eje.h2">Así se ve un proyecto</h2><p data-i18n="eje.p">Ejemplos ilustrativos de cómo se presentan los proyectos. No son ofertas.</p></div>
     <div class="ejemplos">
       <article><span class="insignia" data-i18n="eje.badge">Ejemplo ilustrativo</span><h3 data-i18n="eje.n1">Locales comerciales</h3><p class="ub" data-i18n="eje.u1">Ciudad de Panamá</p>
@@ -148,7 +159,7 @@
     </div>
   </section>
 
-  <section class="seccion simul" id="simulador">
+  <section class="seccion simul" id="simulador" data-vista="proyectos">
     <div class="cabecera"><h2 data-i18n="sim.h2">Simula tu inversión</h2><p data-i18n="sim.p">Mueve los controles y mira cómo se vería el calendario de pagos.</p></div>
     <div class="sim-caja">
       <div class="sim-controles">
@@ -165,7 +176,7 @@
     <p class="sim-aviso" data-i18n="sim.aviso">Estimación ilustrativa con una tasa de ejemplo. No garantiza resultados ni es una oferta.</p>
   </section>
 
-  <section class="seccion" id="ciclo">
+  <section class="seccion" id="ciclo" data-vista="como">
     <div class="cabecera"><h2 data-i18n="cic.h2">El recorrido de cada proyecto</h2></div>
     <ol class="ciclo">
       <li><h3 data-i18n="cic.s1t">Estructuración</h3><p data-i18n="cic.s1p">Se define el proyecto con su fiduciaria y se reúne la documentación del activo.</p></li>
@@ -176,7 +187,7 @@
     </ol>
   </section>
 
-  <section class="seccion oscura" id="porque">
+  <section class="seccion oscura" id="porque" data-vista="seguridad">
     <div class="cabecera">
       <h2 data-i18n="por.h2">Pensado para que sepas dónde está tu dinero</h2>
     </div>
@@ -204,7 +215,7 @@
     </div>
   </section>
 
-  <section class="seccion" id="proyectos">
+  <section class="seccion" id="proyectos" data-vista="proyectos">
     <div class="doble">
       <div class="lado">
         <h2 data-i18n="pro.h2">¿Tienes un proyecto?</h2>
@@ -224,7 +235,7 @@
     </div>
   </section>
 
-  <section class="seccion" id="nosotros">
+  <section class="seccion" id="nosotros" data-vista="nosotros">
     <div class="doble nos">
       <div>
         <h2 data-i18n="nos.h2">Quiénes somos</h2>
@@ -244,7 +255,7 @@
     </div>
   </section>
 
-  <section class="seccion" id="preguntas">
+  <section class="seccion" id="preguntas" data-vista="seguridad">
     <div class="cabecera"><h2 data-i18n="faq.h2">Preguntas frecuentes</h2></div>
     <div class="faq">
       <details><summary data-i18n="faq.q1">¿Qué significa que una inversión esté tokenizada?</summary><p data-i18n="faq.a1">Tu participación en un proyecto se representa con un token registrado en blockchain, lo que permite llevar un registro claro de quién participa y en qué proporción.</p></details>
@@ -255,7 +266,7 @@
     </div>
   </section>
 
-  <section class="seccion contacto" id="contacto">
+  <section class="seccion contacto" id="contacto" data-vista="contacto">
     <div class="cabecera">
       <h2 data-i18n="con.h2">Hablemos</h2>
       <p data-i18n="con.p">Si tienes dudas sobre cómo empezar, escríbenos o llámanos.</p>
@@ -266,7 +277,7 @@
     </div>
   </section>
 
-  <section class="final">
+  <section class="final" data-vista="inicio como contacto">
     <h2 data-i18n="fin.h2">Empieza hoy, a tu ritmo</h2>
     <p data-i18n="fin.p">Crea tu cuenta y conoce los proyectos disponibles.</p>
     <a class="btn gold grande" href="https://portal.panther7.com/nueva-cuenta" data-i18n="hero.cta1">Crear mi cuenta</a>
@@ -287,6 +298,6 @@
   <p class="aviso" data-i18n="pie.aviso">Toda inversión implica riesgo, incluida la pérdida parcial o total del capital. Los resultados pasados no garantizan resultados futuros. Revisa la documentación de cada proyecto antes de invertir.</p>
   <p class="copy">© <span id="anio">2026</span> Panther7 · <a href="mailto:contacto@panther7.com">contacto@panther7.com</a> · <a href="tel:+50760606060">6060-6060</a></p>
 </footer>
-<script src="js/site.js"></script>
+<script src="js/site.js?v=3"></script>
 </body>
 </html>
