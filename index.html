@@ -26,9 +26,9 @@
   </a>
   <nav class="links" aria-label="Principal">
     <a href="#como" data-i18n="nav.como">Cómo funciona</a>
-    <a href="#porque" data-i18n="nav.porque">Por qué Panther7</a>
-    <a href="#proyectos" data-i18n="nav.proyectos">Para tu proyecto</a>
-    <a href="#preguntas" data-i18n="nav.faq">Preguntas</a>
+    <a href="#ejemplos" data-i18n="nav.proy">Proyectos</a>
+    <a href="#porque" data-i18n="nav.seg">Seguridad</a>
+    <a href="#nosotros" data-i18n="nav.nos">Nosotros</a>
     <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
   </nav>
   <div class="acciones">
@@ -69,6 +69,15 @@
     </figure>
   </section>
 
+  <section class="cifras" aria-label="Panther7 en cifras">
+    <!-- CIFRAS DE EJEMPLO: reemplazar por las reales antes de publicar -->
+    <div><strong>12</strong><span data-i18n="cif.1">Proyectos tokenizados</span></div>
+    <div><strong>1,480</strong><span data-i18n="cif.2">Inversionistas verificados</span></div>
+    <div><strong>8.4M</strong><span data-i18n="cif.3">USDT tokenizados</span></div>
+    <div><strong>98%</strong><span data-i18n="cif.4">Pagos acreditados a tiempo</span></div>
+    <p class="nota-borrador">Cifras de ejemplo (borrador): reemplazar por las reales.</p>
+  </section>
+
   <section class="seccion" id="como">
     <div class="cabecera">
       <h2 data-i18n="como.h2">Cuatro pasos, todo desde un solo lugar</h2>
@@ -79,6 +88,91 @@
       <li><span class="n">2</span><h3 data-i18n="como.s2t">Fondea tu wallet</h3><p data-i18n="como.s2p">Deposita con USDT, transferencia, ACH Panamá o tarjeta. Tu saldo se acredita 1 a 1 en USDT.</p></li>
       <li><span class="n">3</span><h3 data-i18n="como.s3t">Elige un proyecto</h3><p data-i18n="como.s3p">Revisa los datos, el cronograma de pagos y los documentos del activo antes de invertir.</p></li>
       <li><span class="n">4</span><h3 data-i18n="como.s4t">Recibe y haz seguimiento</h3><p data-i18n="como.s4p">Cada pago y cada movimiento queda con su referencia en tu estado de cuenta.</p></li>
+    </ol>
+  </section>
+
+  <section class="seccion" id="fondeo">
+    <div class="cabecera"><h2 data-i18n="fon.h2">Fondea como te convenga</h2><p data-i18n="fon.p">Todo se acredita 1 a 1 en USDT.</p></div>
+    <ul class="metodos">
+      <li><b>USDT</b><span data-i18n="fon.ap">Envía desde tu wallet cripto y avisa tu envío.</span></li>
+      <li><b>ACH Panamá</b><span data-i18n="fon.bp">Transferencia bancaria local con comprobante.</span></li>
+      <li><b data-i18n="fon.c">Tarjeta</b><span data-i18n="fon.cp">Paga en la página segura de Stripe, hasta 500 USDT por depósito.</span></li>
+      <li><b data-i18n="fon.d">Transferencia internacional</b><span data-i18n="fon.dp">Desde tu banco en el exterior.</span></li>
+    </ul>
+  </section>
+
+  <section class="seccion oscura vent" id="portal">
+    <div class="cabecera"><h2 data-i18n="ven.h2">Tu portal, a la vista</h2><p data-i18n="ven.p">Saldo, proyectos y movimientos en un solo lugar. Datos de ejemplo.</p></div>
+    <div class="tabs" role="tablist" aria-label="Portal">
+      <button role="tab" aria-selected="true" aria-controls="v1" id="t1" data-i18n="ven.t1">Panel</button>
+      <button role="tab" aria-selected="false" aria-controls="v2" id="t2" data-i18n="ven.t2">Proyecto</button>
+      <button role="tab" aria-selected="false" aria-controls="v3" id="t3" data-i18n="ven.t3">Wallet</button>
+    </div>
+    <div class="ventana">
+      <div class="barra"><i></i><i></i><i></i><span>portal.panther7.com</span></div>
+      <div class="vista" id="v1" role="tabpanel" aria-labelledby="t1">
+        <div class="saldo"><span data-i18n="ven.saldo">Saldo disponible</span><strong>4,250.00 <small>USDT</small></strong>
+          <svg viewBox="0 0 300 60" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,50 40,44 80,46 120,30 160,34 200,18 240,22 300,6" fill="none" stroke="#e3a82b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        </div>
+        <ul class="movs"><li class="titulo" data-i18n="ven.mov">Últimos movimientos</li>
+          <li><span data-i18n="ven.m1">Depósito · tarjeta</span><b class="pos">+500.00</b></li>
+          <li><span data-i18n="ven.m2">Pago de proyecto</span><b class="pos">+18.75</b></li>
+          <li><span data-i18n="ven.m3">Inversión</span><b class="neg">−1,000.00</b></li></ul>
+      </div>
+      <div class="vista" id="v2" role="tabpanel" aria-labelledby="t2" hidden>
+        <h3 data-i18n="eje.n1">Locales comerciales</h3>
+        <div class="avance"><span data-i18n="ven.avance">Avance de fondeo</span><div class="bar"><i style="width:72%"></i></div><b>72%</b></div>
+        <div class="datos"><div><span data-i18n="ven.plazo">Plazo</span><b>24 <span data-i18n="eje.meses">meses</span></b></div><div><span data-i18n="ven.pagos">Pagos</span><b data-i18n="eje.mens">mensuales</b></div></div>
+        <ul class="docs"><li class="titulo" data-i18n="ven.docs">Documentos</li><li data-i18n="ven.d1">Documentación del activo</li><li data-i18n="ven.d2">Traspaso al token (notarizado)</li></ul>
+      </div>
+      <div class="vista" id="v3" role="tabpanel" aria-labelledby="t3" hidden>
+        <div class="saldo"><span data-i18n="ven.addr">Tu dirección</span><strong class="mono">0x7a3F…c91B</strong></div>
+        <div class="botones"><span>USDT</span><span>ACH Panamá</span><span data-i18n="fon.c">Tarjeta</span></div>
+        <ul class="movs"><li class="titulo" data-i18n="ven.mov">Últimos movimientos</li><li><span data-i18n="ven.m1">Depósito · tarjeta</span><b class="pos">+500.00</b></li><li><span data-i18n="ven.m3">Inversión</span><b class="neg">−1,000.00</b></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="ejemplos">
+    <div class="cabecera"><h2 data-i18n="eje.h2">Así se ve un proyecto</h2><p data-i18n="eje.p">Ejemplos ilustrativos de cómo se presentan los proyectos. No son ofertas.</p></div>
+    <div class="ejemplos">
+      <article><span class="insignia" data-i18n="eje.badge">Ejemplo ilustrativo</span><h3 data-i18n="eje.n1">Locales comerciales</h3><p class="ub" data-i18n="eje.u1">Ciudad de Panamá</p>
+        <dl><div><dt data-i18n="eje.meta">Meta</dt><dd>250,000 USDT</dd></div><div><dt data-i18n="ven.plazo">Plazo</dt><dd>24 <span data-i18n="eje.meses">meses</span></dd></div><div><dt data-i18n="ven.pagos">Pagos</dt><dd data-i18n="eje.mens">mensuales</dd></div></dl>
+        <div class="avance"><div class="bar"><i style="width:72%"></i></div><b>72% <span data-i18n="eje.fond">financiado</span></b></div></article>
+      <article><span class="insignia" data-i18n="eje.badge">Ejemplo ilustrativo</span><h3 data-i18n="eje.n2">Cultivo de café</h3><p class="ub" data-i18n="eje.u2">Chiriquí</p>
+        <dl><div><dt data-i18n="eje.meta">Meta</dt><dd>120,000 USDT</dd></div><div><dt data-i18n="ven.plazo">Plazo</dt><dd>12 <span data-i18n="eje.meses">meses</span></dd></div><div><dt data-i18n="ven.pagos">Pagos</dt><dd data-i18n="eje.trim">trimestrales</dd></div></dl>
+        <div class="avance"><div class="bar"><i style="width:45%"></i></div><b>45% <span data-i18n="eje.fond">financiado</span></b></div></article>
+      <article><span class="insignia" data-i18n="eje.badge">Ejemplo ilustrativo</span><h3 data-i18n="eje.n3">Flota de transporte</h3><p class="ub" data-i18n="eje.u3">Corredor logístico</p>
+        <dl><div><dt data-i18n="eje.meta">Meta</dt><dd>400,000 USDT</dd></div><div><dt data-i18n="ven.plazo">Plazo</dt><dd>36 <span data-i18n="eje.meses">meses</span></dd></div><div><dt data-i18n="ven.pagos">Pagos</dt><dd data-i18n="eje.sem">semestrales</dd></div></dl>
+        <div class="avance"><div class="bar"><i style="width:18%"></i></div><b>18% <span data-i18n="eje.fond">financiado</span></b></div></article>
+    </div>
+  </section>
+
+  <section class="seccion simul" id="simulador">
+    <div class="cabecera"><h2 data-i18n="sim.h2">Simula tu inversión</h2><p data-i18n="sim.p">Mueve los controles y mira cómo se vería el calendario de pagos.</p></div>
+    <div class="sim-caja">
+      <div class="sim-controles">
+        <label for="sim-monto"><span data-i18n="sim.monto">Monto (USDT)</span><output id="sim-monto-v">500</output></label>
+        <input id="sim-monto" type="range" min="50" max="5000" step="50" value="500">
+        <label for="sim-plazo"><span data-i18n="sim.plazo">Plazo</span><output id="sim-plazo-v">12</output></label>
+        <input id="sim-plazo" type="range" min="6" max="36" step="6" value="12">
+      </div>
+      <div class="sim-res">
+        <div><span data-i18n="sim.est">Pagos estimados</span><strong id="sim-pagos">0 USDT</strong></div>
+        <div><span data-i18n="sim.total">Total al final</span><strong id="sim-total" class="oro">0 USDT</strong></div>
+      </div>
+    </div>
+    <p class="sim-aviso" data-i18n="sim.aviso">Estimación ilustrativa con una tasa de ejemplo. No garantiza resultados ni es una oferta.</p>
+  </section>
+
+  <section class="seccion" id="ciclo">
+    <div class="cabecera"><h2 data-i18n="cic.h2">El recorrido de cada proyecto</h2></div>
+    <ol class="ciclo">
+      <li><h3 data-i18n="cic.s1t">Estructuración</h3><p data-i18n="cic.s1p">Se define el proyecto con su fiduciaria y se reúne la documentación del activo.</p></li>
+      <li><h3 data-i18n="cic.s2t">Traspaso y tokenización</h3><p data-i18n="cic.s2p">El activo se traspasa con documento notarizado y su participación se convierte en tokens.</p></li>
+      <li><h3 data-i18n="cic.s3t">Apertura a inversionistas</h3><p data-i18n="cic.s3p">Los inversionistas verificados revisan la ficha y participan desde su wallet en USDT.</p></li>
+      <li><h3 data-i18n="cic.s4t">Pagos programados</h3><p data-i18n="cic.s4p">Cada parcela del cronograma se acredita en la wallet de quienes participan.</p></li>
+      <li><h3 data-i18n="cic.s5t">Cierre</h3><p data-i18n="cic.s5p">Al terminar el plazo, el proyecto se cierra y queda todo registrado en tu estado de cuenta.</p></li>
     </ol>
   </section>
 
@@ -127,6 +221,26 @@
         <p data-i18n="inv.p">Empieza con un monto que te resulte cómodo y diversifica entre proyectos a tu ritmo.</p>
         <a class="btn ghost" href="https://portal.panther7.com/nueva-cuenta" data-i18n="inv.cta">Crear mi cuenta</a>
       </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="nosotros">
+    <div class="doble nos">
+      <div>
+        <h2 data-i18n="nos.h2">Quiénes somos</h2>
+        <p data-i18n="nos.p1">Panther7 nace para que invertir en proyectos reales de la región sea más simple, claro y accesible.</p>
+        <p data-i18n="nos.p2">Combinamos estructura fiduciaria, documentación verificable y tecnología de tokenización para que sepas qué compras y cómo recibes tus pagos.</p>
+      </div>
+      <ul class="valores">
+        <li><b data-i18n="nos.v1">Transparencia</b><span data-i18n="nos.v1p">Documentos y movimientos siempre a la vista.</span></li>
+        <li><b data-i18n="nos.v2">Acceso</b><span data-i18n="nos.v2p">Montos pequeños, sin barreras innecesarias.</span></li>
+        <li><b data-i18n="nos.v3">Seguimiento</b><span data-i18n="nos.v3p">Cada pago con su referencia.</span></li>
+      </ul>
+    </div>
+    <div class="aliados">
+      <h3 data-i18n="nos.aliados">Aliados</h3>
+      <!-- LOGOS DE EJEMPLO: reemplazar por los reales (fiduciaria, notaría, procesador de pagos) -->
+      <div class="slots"><span data-i18n="nos.slot">Logo aliado</span><span data-i18n="nos.slot">Logo aliado</span><span data-i18n="nos.slot">Logo aliado</span><span data-i18n="nos.slot">Logo aliado</span></div>
     </div>
   </section>
 

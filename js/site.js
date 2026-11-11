@@ -29,6 +29,82 @@
       'faq.q4':'What is USDT?','faq.a4':'It is a digital currency designed to hold a value equivalent to one US dollar. At Panther7 your balance and investments are expressed in USDT.',
       'faq.q5':'How do I track my investments?','faq.a5':'From your portal you see your investments, scheduled payments and all your movements with their reference.',
       'fin.h2':'Start today, at your own pace','fin.p':'Create your account and discover the available projects.',
+      'nav.proy':'Projects',
+      'nav.seg':'Security',
+      'nav.nos':'About',
+      'cif.1':'Tokenized projects',
+      'cif.2':'Verified investors',
+      'cif.3':'USDT tokenized',
+      'cif.4':'Payments credited on time',
+      'fon.h2':'Fund it your way',
+      'fon.p':'Everything is credited 1 to 1 in USDT.',
+      'fon.ap':'Send from your crypto wallet and report your transfer.',
+      'fon.bp':'Local bank transfer with proof of payment.',
+      'fon.c':'Card',
+      'fon.cp':'Pay on Stripe’s secure page, up to 500 USDT per deposit.',
+      'fon.d':'International transfer',
+      'fon.dp':'From your bank abroad.',
+      'ven.h2':'Your portal at a glance',
+      'ven.p':'Balance, projects and movements in one place. Sample data.',
+      'ven.t1':'Dashboard',
+      'ven.t2':'Project',
+      'ven.t3':'Wallet',
+      'ven.saldo':'Available balance',
+      'ven.mov':'Latest movements',
+      'ven.m1':'Deposit · card',
+      'ven.m2':'Project payment',
+      'ven.m3':'Investment',
+      'ven.avance':'Funding progress',
+      'ven.plazo':'Term',
+      'ven.pagos':'Payments',
+      'ven.docs':'Documents',
+      'ven.d1':'Asset documentation',
+      'ven.d2':'Transfer to the token (notarized)',
+      'ven.addr':'Your address',
+      'eje.h2':'What a project looks like',
+      'eje.p':'Illustrative examples of how projects are presented. They are not offers.',
+      'eje.badge':'Illustrative example',
+      'eje.n1':'Commercial units',
+      'eje.n2':'Coffee farm',
+      'eje.n3':'Transport fleet',
+      'eje.u1':'Panama City',
+      'eje.u2':'Chiriquí',
+      'eje.u3':'Logistics corridor',
+      'eje.meta':'Goal',
+      'eje.meses':'months',
+      'eje.mens':'monthly',
+      'eje.trim':'quarterly',
+      'eje.sem':'semiannual',
+      'eje.fond':'funded',
+      'sim.h2':'Simulate your investment',
+      'sim.p':'Move the sliders and see what the payment schedule could look like.',
+      'sim.monto':'Amount (USDT)',
+      'sim.plazo':'Term (months)',
+      'sim.est':'Estimated payments',
+      'sim.total':'Total at the end',
+      'sim.aviso':'Illustrative estimate using a sample rate. It does not guarantee results and is not an offer.',
+      'cic.h2':'Each project’s journey',
+      'cic.s1t':'Structuring',
+      'cic.s1p':'The project is defined with its trustee and the asset documentation is gathered.',
+      'cic.s2t':'Transfer and tokenization',
+      'cic.s2p':'The asset is transferred with a notarized document and its share becomes tokens.',
+      'cic.s3t':'Opening to investors',
+      'cic.s3p':'Verified investors review the file and take part from their wallet in USDT.',
+      'cic.s4t':'Scheduled payments',
+      'cic.s4p':'Each installment of the schedule is credited to the wallets of those taking part.',
+      'cic.s5t':'Closing',
+      'cic.s5p':'At the end of the term the project closes and everything stays on your statement.',
+      'nos.h2':'Who we are',
+      'nos.p1':'Panther7 exists to make investing in real projects across the region simpler, clearer and more accessible.',
+      'nos.p2':'We combine trust structures, verifiable documentation and tokenization technology so you know what you buy and how you get paid.',
+      'nos.v1':'Transparency',
+      'nos.v1p':'Documents and movements always in view.',
+      'nos.v2':'Access',
+      'nos.v2p':'Small amounts, no needless barriers.',
+      'nos.v3':'Tracking',
+      'nos.v3p':'Every payment with its reference.',
+      'nos.aliados':'Partners',
+      'nos.slot':'Partner logo',
       'pie.aviso':'All investing involves risk, including partial or total loss of capital. Past results do not guarantee future results. Review each project\'s documentation before investing.'
     },
     pt: {
@@ -58,6 +134,82 @@
       'faq.q4':'O que é USDT?','faq.a4':'É uma moeda digital criada para manter um valor equivalente a um dólar americano. Na Panther7, seu saldo e seus investimentos são expressos em USDT.',
       'faq.q5':'Como acompanho meus investimentos?','faq.a5':'No seu portal você vê seus investimentos, os pagamentos programados e todos os seus movimentos com a referência.',
       'fin.h2':'Comece hoje, no seu ritmo','fin.p':'Crie sua conta e conheça os projetos disponíveis.',
+      'nav.proy':'Projetos',
+      'nav.seg':'Segurança',
+      'nav.nos':'Sobre nós',
+      'cif.1':'Projetos tokenizados',
+      'cif.2':'Investidores verificados',
+      'cif.3':'USDT tokenizados',
+      'cif.4':'Pagamentos creditados em dia',
+      'fon.h2':'Deposite do seu jeito',
+      'fon.p':'Tudo é creditado 1 para 1 em USDT.',
+      'fon.ap':'Envie da sua wallet cripto e informe o envio.',
+      'fon.bp':'Transferência bancária local com comprovante.',
+      'fon.c':'Cartão',
+      'fon.cp':'Pague na página segura da Stripe, até 500 USDT por depósito.',
+      'fon.d':'Transferência internacional',
+      'fon.dp':'Do seu banco no exterior.',
+      'ven.h2':'Seu portal à vista',
+      'ven.p':'Saldo, projetos e movimentos em um só lugar. Dados de exemplo.',
+      'ven.t1':'Painel',
+      'ven.t2':'Projeto',
+      'ven.t3':'Wallet',
+      'ven.saldo':'Saldo disponível',
+      'ven.mov':'Últimos movimentos',
+      'ven.m1':'Depósito · cartão',
+      'ven.m2':'Pagamento de projeto',
+      'ven.m3':'Investimento',
+      'ven.avance':'Progresso do aporte',
+      'ven.plazo':'Prazo',
+      'ven.pagos':'Pagamentos',
+      'ven.docs':'Documentos',
+      'ven.d1':'Documentação do ativo',
+      'ven.d2':'Transferência ao token (autenticada)',
+      'ven.addr':'Seu endereço',
+      'eje.h2':'Como é um projeto',
+      'eje.p':'Exemplos ilustrativos de como os projetos são apresentados. Não são ofertas.',
+      'eje.badge':'Exemplo ilustrativo',
+      'eje.n1':'Salas comerciais',
+      'eje.n2':'Plantação de café',
+      'eje.n3':'Frota de transporte',
+      'eje.u1':'Cidade do Panamá',
+      'eje.u2':'Chiriquí',
+      'eje.u3':'Corredor logístico',
+      'eje.meta':'Meta',
+      'eje.meses':'meses',
+      'eje.mens':'mensais',
+      'eje.trim':'trimestrais',
+      'eje.sem':'semestrais',
+      'eje.fond':'financiado',
+      'sim.h2':'Simule seu investimento',
+      'sim.p':'Mova os controles e veja como poderia ser o calendário de pagamentos.',
+      'sim.monto':'Valor (USDT)',
+      'sim.plazo':'Prazo (meses)',
+      'sim.est':'Pagamentos estimados',
+      'sim.total':'Total ao final',
+      'sim.aviso':'Estimativa ilustrativa com uma taxa de exemplo. Não garante resultados nem é uma oferta.',
+      'cic.h2':'A jornada de cada projeto',
+      'cic.s1t':'Estruturação',
+      'cic.s1p':'O projeto é definido com sua fiduciária e a documentação do ativo é reunida.',
+      'cic.s2t':'Transferência e tokenização',
+      'cic.s2p':'O ativo é transferido com documento autenticado e sua participação vira tokens.',
+      'cic.s3t':'Abertura a investidores',
+      'cic.s3p':'Investidores verificados analisam a ficha e participam da sua wallet em USDT.',
+      'cic.s4t':'Pagamentos programados',
+      'cic.s4p':'Cada parcela do cronograma é creditada na wallet de quem participa.',
+      'cic.s5t':'Encerramento',
+      'cic.s5p':'Ao fim do prazo o projeto se encerra e tudo fica no seu extrato.',
+      'nos.h2':'Quem somos',
+      'nos.p1':'A Panther7 nasce para tornar o investimento em projetos reais da região mais simples, claro e acessível.',
+      'nos.p2':'Combinamos estrutura fiduciária, documentação verificável e tecnologia de tokenização para você saber o que compra e como recebe.',
+      'nos.v1':'Transparência',
+      'nos.v1p':'Documentos e movimentos sempre à vista.',
+      'nos.v2':'Acesso',
+      'nos.v2p':'Valores pequenos, sem barreiras desnecessárias.',
+      'nos.v3':'Acompanhamento',
+      'nos.v3p':'Cada pagamento com sua referência.',
+      'nos.aliados':'Parceiros',
+      'nos.slot':'Logo do parceiro',
       'pie.aviso':'Todo investimento envolve risco, incluindo perda parcial ou total do capital. Resultados passados não garantem resultados futuros. Consulte a documentação de cada projeto antes de investir.'
     }
   };
@@ -101,6 +253,32 @@
 
   var inicial = guardado();
   if (inicial !== 'es') aplicar(inicial);
+
+
+  // pestañas de la ventana de producto
+  var tabs = document.querySelectorAll('.tabs [role="tab"]');
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      tabs.forEach(function (o) {
+        var on = o === t; o.setAttribute('aria-selected', on ? 'true' : 'false');
+        var p = document.getElementById(o.getAttribute('aria-controls')); if (p) p.hidden = !on;
+      });
+    });
+  });
+
+  // simulador ilustrativo (tasa de ejemplo, no una oferta)
+  var TASA_EJEMPLO = 0.10; // anual, solo para la demostración
+  var sm = document.getElementById('sim-monto'), sp = document.getElementById('sim-plazo');
+  function fmtN(n) { return n.toLocaleString(document.documentElement.lang === 'es' ? 'es-PA' : document.documentElement.lang === 'pt' ? 'pt-BR' : 'en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function simular() {
+    if (!sm || !sp) return;
+    var m = +sm.value, p = +sp.value, g = m * TASA_EJEMPLO * (p / 12);
+    document.getElementById('sim-monto-v').textContent = m.toLocaleString('en-US');
+    document.getElementById('sim-plazo-v').textContent = p;
+    document.getElementById('sim-pagos').textContent = fmtN(g) + ' USDT';
+    document.getElementById('sim-total').textContent = fmtN(m + g) + ' USDT';
+  }
+  if (sm && sp) { sm.addEventListener('input', simular); sp.addEventListener('input', simular); simular(); }
 
   var nav = document.getElementById('nav');
   var alScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
