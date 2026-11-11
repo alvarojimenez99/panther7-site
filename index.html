@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=3">
+<link rel="stylesheet" href="css/site.css?v=4">
 </head>
 <body>
 <a class="skip" href="#contenido" data-i18n="skip">Saltar al contenido</a>
@@ -160,17 +160,30 @@
   </section>
 
   <section class="seccion simul" id="simulador" data-vista="proyectos">
-    <div class="cabecera"><h2 data-i18n="sim.h2">Simula tu inversión</h2><p data-i18n="sim.p">Mueve los controles y mira cómo se vería el calendario de pagos.</p></div>
+    <div class="cabecera"><h2 data-i18n="sim.h2">Simula tu inversión</h2><p data-i18n="sim.p">Juega con los controles y mira cómo crecería tu saldo.</p></div>
     <div class="sim-caja">
       <div class="sim-controles">
         <label for="sim-monto"><span data-i18n="sim.monto">Monto (USDT)</span><output id="sim-monto-v">500</output></label>
-        <input id="sim-monto" type="range" min="50" max="5000" step="50" value="500">
-        <label for="sim-plazo"><span data-i18n="sim.plazo">Plazo</span><output id="sim-plazo-v">12</output></label>
-        <input id="sim-plazo" type="range" min="6" max="36" step="6" value="12">
+        <input id="sim-monto" type="range" min="50" max="10000" step="50" value="500">
+        <div class="chips" data-grupo="monto" role="group" aria-label="Monto"><button type="button" data-v="100">100</button><button type="button" data-v="500">500</button><button type="button" data-v="1000">1,000</button><button type="button" data-v="5000">5,000</button></div>
+
+        <p class="sim-t" data-i18n="sim.plazo">Plazo (meses)</p>
+        <div class="chips" data-grupo="plazo" role="group"><button type="button" data-v="6">6</button><button type="button" data-v="12" class="on">12</button><button type="button" data-v="24">24</button><button type="button" data-v="36">36</button></div>
+
+        <p class="sim-t" data-i18n="sim.freq">Frecuencia de pagos</p>
+        <div class="chips" data-grupo="freq" role="group"><button type="button" data-v="1" data-i18n="sim.f1">Mensual</button><button type="button" data-v="3" class="on" data-i18n="sim.f3">Trimestral</button><button type="button" data-v="6" data-i18n="sim.f6">Semestral</button></div>
+
+        <p class="sim-t" data-i18n="sim.esc">Escenario de ejemplo</p>
+        <div class="chips" data-grupo="tasa" role="group"><button type="button" data-v="8" data-i18n="sim.e1">Prudente</button><button type="button" data-v="10" class="on" data-i18n="sim.e2">Base</button><button type="button" data-v="12" data-i18n="sim.e3">Optimista</button></div>
+
+        <label class="sw"><input type="checkbox" id="sim-reinv"><span data-i18n="sim.reinv">Reinvertir los pagos</span></label>
       </div>
       <div class="sim-res">
-        <div><span data-i18n="sim.est">Pagos estimados</span><strong id="sim-pagos">0 USDT</strong></div>
-        <div><span data-i18n="sim.total">Total al final</span><strong id="sim-total" class="oro">0 USDT</strong></div>
+        <div class="sim-total"><span data-i18n="sim.total">Total al final</span><strong id="sim-total" class="oro">0 USDT</strong></div>
+        <div class="sim-fila"><div><span data-i18n="sim.est">Ganancia estimada</span><b id="sim-pagos">0</b></div><div><span data-i18n="sim.rend">Rendimiento</span><b id="sim-rend">0%</b></div><div><span data-i18n="sim.cada">Cada pago</span><b id="sim-cada">0</b></div></div>
+        <p class="sim-t" data-i18n="sim.grafico">Así crece tu saldo</p>
+        <div class="sim-barras" id="sim-barras" aria-hidden="true"></div>
+        <p class="leyenda"><i class="k1"></i><span data-i18n="sim.cap">Capital</span><i class="k2"></i><span data-i18n="sim.gan">Ganancia</span></p>
       </div>
     </div>
     <p class="sim-aviso" data-i18n="sim.aviso">Estimación ilustrativa con una tasa de ejemplo. No garantiza resultados ni es una oferta.</p>
@@ -298,6 +311,6 @@
   <p class="aviso" data-i18n="pie.aviso">Toda inversión implica riesgo, incluida la pérdida parcial o total del capital. Los resultados pasados no garantizan resultados futuros. Revisa la documentación de cada proyecto antes de invertir.</p>
   <p class="copy">© <span id="anio">2026</span> Panther7 · <a href="mailto:contacto@panther7.com">contacto@panther7.com</a> · <a href="tel:+50760606060">6060-6060</a></p>
 </footer>
-<script src="js/site.js?v=3"></script>
+<script src="js/site.js?v=4"></script>
 </body>
 </html>

@@ -253,3 +253,26 @@ h1{font-size:clamp(2.5rem,6.2vw,4.9rem);font-weight:800;max-width:14ch}
 @media (prefers-reduced-motion:reduce){#contenido.entra{animation:none}}
 .cifras{padding:0;width:min(calc(var(--max) - 2*var(--g)),calc(100% - 2*var(--g)))}
 .atajos{width:min(calc(var(--max) - 2*var(--g)),calc(100% - 2*var(--g)));padding:0}
+
+/* ===== simulador interactivo ===== */
+.sim-caja{align-items:start!important}
+.sim-t{margin:1.3rem 0 .5rem;color:var(--mute);font-size:.9rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+.chips button{font:600 .9rem var(--body);color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:.4rem .95rem;cursor:pointer;transition:background .15s,border-color .15s}
+.chips button:hover{border-color:var(--gold-d)}
+.chips button.on{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.sw{display:flex;align-items:center;gap:.6rem;margin-top:1.4rem!important;cursor:pointer;justify-content:flex-start!important}
+.sw input{width:1.1rem;height:1.1rem;accent-color:var(--gold)}
+.sim-res .sim-total{border-bottom:1px solid var(--line);padding-top:0}
+.sim-res .sim-total strong{font-size:clamp(2rem,5vw,2.8rem)}
+.sim-fila{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;padding:.9rem 0}
+.sim-res .sim-fila div{padding:0;border:0}
+.sim-fila b{font:700 1.15rem var(--display)}
+.sim-res .sim-t{margin-top:.4rem}
+.sim-barras{display:flex;align-items:flex-end;gap:3px;height:130px;border-bottom:1px solid var(--line)}
+.barra-s{flex:1;background:var(--line);border-radius:4px 4px 0 0;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;transition:height .35s ease;min-width:2px}
+.barra-s i{display:block;background:var(--gold);width:100%;transition:height .35s ease}
+.leyenda{display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--mute);margin:.6rem 0 0}
+.leyenda i{width:.7rem;height:.7rem;border-radius:3px;display:inline-block}
+.leyenda .k1{background:var(--line)}.leyenda .k2{background:var(--gold);margin-left:.8rem}
+@media (prefers-reduced-motion:reduce){.barra-s,.barra-s i{transition:none}}

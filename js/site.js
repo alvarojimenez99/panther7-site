@@ -77,10 +77,8 @@
       'eje.sem':'semiannual',
       'eje.fond':'funded',
       'sim.h2':'Simulate your investment',
-      'sim.p':'Move the sliders and see what the payment schedule could look like.',
       'sim.monto':'Amount (USDT)',
       'sim.plazo':'Term (months)',
-      'sim.est':'Estimated payments',
       'sim.total':'Total at the end',
       'sim.aviso':'Illustrative estimate using a sample rate. It does not guarantee results and is not an offer.',
       'cic.h2':'Each project’s journey',
@@ -113,6 +111,22 @@
       'at.seg':'Transparency and FAQ.',
       'at.nos':'Who we are and who we work with.',
       'at.con':'Write or call us.',
+      'sim.p':'Play with the controls and see how your balance could grow.',
+      'sim.freq':'Payment frequency',
+      'sim.f1':'Monthly',
+      'sim.f3':'Quarterly',
+      'sim.f6':'Semiannual',
+      'sim.esc':'Sample scenario',
+      'sim.e1':'Prudent',
+      'sim.e2':'Base',
+      'sim.e3':'Optimistic',
+      'sim.reinv':'Reinvest the payments',
+      'sim.est':'Estimated earnings',
+      'sim.rend':'Return',
+      'sim.cada':'Each payment',
+      'sim.grafico':'How your balance grows',
+      'sim.cap':'Capital',
+      'sim.gan':'Earnings',
       'pie.aviso':'All investing involves risk, including partial or total loss of capital. Past results do not guarantee future results. Review each project\'s documentation before investing.'
     },
     pt: {
@@ -190,10 +204,8 @@
       'eje.sem':'semestrais',
       'eje.fond':'financiado',
       'sim.h2':'Simule seu investimento',
-      'sim.p':'Mova os controles e veja como poderia ser o calendário de pagamentos.',
       'sim.monto':'Valor (USDT)',
       'sim.plazo':'Prazo (meses)',
-      'sim.est':'Pagamentos estimados',
       'sim.total':'Total ao final',
       'sim.aviso':'Estimativa ilustrativa com uma taxa de exemplo. Não garante resultados nem é uma oferta.',
       'cic.h2':'A jornada de cada projeto',
@@ -226,6 +238,22 @@
       'at.seg':'Transparência e perguntas frequentes.',
       'at.nos':'Quem somos e com quem trabalhamos.',
       'at.con':'Escreva ou ligue.',
+      'sim.p':'Brinque com os controles e veja como seu saldo poderia crescer.',
+      'sim.freq':'Frequência dos pagamentos',
+      'sim.f1':'Mensal',
+      'sim.f3':'Trimestral',
+      'sim.f6':'Semestral',
+      'sim.esc':'Cenário de exemplo',
+      'sim.e1':'Prudente',
+      'sim.e2':'Base',
+      'sim.e3':'Otimista',
+      'sim.reinv':'Reinvestir os pagamentos',
+      'sim.est':'Ganho estimado',
+      'sim.rend':'Rendimento',
+      'sim.cada':'Cada pagamento',
+      'sim.grafico':'Como seu saldo cresce',
+      'sim.cap':'Capital',
+      'sim.gan':'Ganho',
       'pie.aviso':'Todo investimento envolve risco, incluindo perda parcial ou total do capital. Resultados passados não garantem resultados futuros. Consulte a documentação de cada projeto antes de investir.'
     }
   };
@@ -282,20 +310,48 @@
     });
   });
 
-  // simulador ilustrativo (tasa de ejemplo, no una oferta)
-  var TASA_EJEMPLO = 0.10; // anual, solo para la demostración
-  var sm = document.getElementById('sim-monto'), sp = document.getElementById('sim-plazo');
-  function fmtN(n) { return n.toLocaleString(document.documentElement.lang === 'es' ? 'es-PA' : document.documentElement.lang === 'pt' ? 'pt-BR' : 'en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
-  function simular() {
-    if (!sm || !sp) return;
-    var m = +sm.value, p = +sp.value, g = m * TASA_EJEMPLO * (p / 12);
-    document.getElementById('sim-monto-v').textContent = m.toLocaleString('en-US');
-    document.getElementById('sim-plazo-v').textContent = p;
-    document.getElementById('sim-pagos').textContent = fmtN(g) + ' USDT';
-    document.getElementById('sim-total').textContent = fmtN(m + g) + ' USDT';
+  // simulador ilustrativo (tasas de ejemplo, no una oferta)
+  var simEl = document.getElementById('sim-monto');
+  if (simEl) {
+    var est = { monto: 500, plazo: 12, freq: 3, tasa: 10 };
+    var rango = simEl, salida = document.getElementById('sim-monto-v'), reinv = document.getElementById('sim-reinv');
+    var loc = function () { var l = document.documentElement.lang; return l === 'pt' ? 'pt-BR' : l === 'en' ? 'en-US' : 'es-PA'; };
+    var f2 = function (n) { return n.toLocaleString(loc(), { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+    var simular = function () {
+      var n = Math.max(1, Math.round(est.plazo / est.freq)), r = (est.tasa / 100) * est.freq / 12, saldo = est.monto, barras = [], cada = est.monto * r;
+      for (var i = 1; i <= n; i++) {
+        if (reinv.checked) { saldo = saldo * (1 + r); barras.push(saldo); }
+        else { barras.push(est.monto + cada * i); }
+      }
+      var total = barras[n - 1], gan = total - est.monto;
+      salida.textContent = est.monto.toLocaleString('en-US');
+      document.getElementById('sim-total').textContent = f2(total) + ' USDT';
+      document.getElementById('sim-pagos').textContent = f2(gan);
+      document.getElementById('sim-rend').textContent = (gan / est.monto * 100).toFixed(1) + '%';
+      document.getElementById('sim-cada').textContent = reinv.checked ? '—' : f2(cada);
+      var max = total, cont = document.getElementById('sim-barras'); cont.innerHTML = '';
+      barras.forEach(function (v, i) {
+        var d = document.createElement('div'); d.className = 'barra-s'; d.style.height = (v / max * 100) + '%'; d.title = (i + 1) + ' · ' + f2(v) + ' USDT';
+        d.innerHTML = '<i style="height:' + ((v - est.monto) / v * 100) + '%"></i>'; cont.appendChild(d);
+      });
+    };
+    rango.addEventListener('input', function () { est.monto = +rango.value; marcar(); simular(); });
+    reinv.addEventListener('change', simular);
+    var marcar = function () {
+      document.querySelectorAll('.chips[data-grupo="monto"] button').forEach(function (b) { b.classList.toggle('on', +b.dataset.v === est.monto); });
+    };
+    document.querySelectorAll('.chips').forEach(function (g) {
+      g.addEventListener('click', function (e) {
+        var b = e.target.closest('button'); if (!b) return;
+        var k = g.dataset.grupo; est[k] = +b.dataset.v;
+        if (k === 'monto') rango.value = est.monto;
+        g.querySelectorAll('button').forEach(function (o) { o.classList.toggle('on', o === b); });
+        simular();
+      });
+    });
+    marcar(); simular();
+    document.querySelectorAll('.idioma button').forEach(function (b) { b.addEventListener('click', function () { setTimeout(simular, 0); }); });
   }
-  if (sm && sp) { sm.addEventListener('input', simular); sp.addEventListener('input', simular); simular(); }
-
 
   // vistas: una sección a la vez, sin scroll largo
   var VISTAS = ['inicio', 'como', 'proyectos', 'portal', 'seguridad', 'nosotros', 'contacto'];
