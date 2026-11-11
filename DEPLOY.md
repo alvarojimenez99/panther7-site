@@ -3,7 +3,8 @@
 Sitio estático (HTML, CSS y JS sin dependencias). Español por defecto, con selector EN/PT.
 
 ## Despliegue
-Cada cambio en `main` se aplica solo: un cron ejecuta `deploy.sh` cada minuto (`git fetch` + `git reset --hard origin/main`). Registro en `~/deploy-site.log`.
+El repositorio se clona **fuera** de `public_html` (en `~/domains/panther7.com/sitio_repo`). Un cron ejecuta `deploy.sh` cada minuto: hace `git fetch`, `git reset --hard origin/main` y copia solo `index.html`, `robots.txt`, `css/`, `js/` e `img/` a `public_html`. No toca `admin/`, `portal/`, `webservice/` ni el `.htaccess`.
+Registro en `~/deploy-site.log`.
 
 ## Contenido
 - Textos en español: directamente en `index.html`.
