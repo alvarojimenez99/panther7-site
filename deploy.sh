@@ -18,7 +18,7 @@
   [ "$(cat "$MARCA" 2>/dev/null)" = "$ACTUAL" ] && [ -f "$DESTINO/index.html" ] && exit 0
 
   # Solo estos elementos del repositorio se publican: páginas .html, robots.txt, css, js, img
-  for f in *.html robots.txt css js img; do
+  for f in *.html *.php robots.txt css js img; do
     [ -e "$f" ] || continue
     rm -rf "${DESTINO:?}/$f"
     cp -a "$f" "$DESTINO/$f"

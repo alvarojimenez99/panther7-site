@@ -127,6 +127,21 @@
       'sim.grafico':'How your balance grows',
       'sim.cap':'Capital',
       'sim.gan':'Earnings',
+      'frm.nombre':'Name',
+      'frm.correo':'Email',
+      'frm.tema':'Topic',
+      'frm.t1':'I want to invest',
+      'frm.t2':'I have a project',
+      'frm.t3':'Account support',
+      'frm.t4':'Other',
+      'frm.msg':'Message',
+      'frm.cap':'Check: what is',
+      'frm.enviar':'Send message',
+      'frm.ok':'Thank you! We received your message and will reply soon.',
+      'frm.cap_mal':'The check is not correct. Please try again.',
+      'frm.val':'Check your name, a valid email and a message of at least 10 characters.',
+      'frm.rate':'You sent several messages in a row. Please try again later.',
+      'frm.envio':'We could not send it. Write to us at contacto@panther7.com.',
       'pie.aviso':'All investing involves risk, including partial or total loss of capital. Past results do not guarantee future results. Review each project\'s documentation before investing.'
     },
     pt: {
@@ -254,6 +269,21 @@
       'sim.grafico':'Como seu saldo cresce',
       'sim.cap':'Capital',
       'sim.gan':'Ganho',
+      'frm.nombre':'Nome',
+      'frm.correo':'E-mail',
+      'frm.tema':'Assunto',
+      'frm.t1':'Quero investir',
+      'frm.t2':'Tenho um projeto',
+      'frm.t3':'Suporte da minha conta',
+      'frm.t4':'Outro',
+      'frm.msg':'Mensagem',
+      'frm.cap':'Verificação: quanto é',
+      'frm.enviar':'Enviar mensagem',
+      'frm.ok':'Obrigado! Recebemos sua mensagem e responderemos em breve.',
+      'frm.cap_mal':'A verificação não está correta. Tente novamente.',
+      'frm.val':'Confira seu nome, um e-mail válido e uma mensagem de pelo menos 10 caracteres.',
+      'frm.rate':'Você enviou várias mensagens seguidas. Tente novamente mais tarde.',
+      'frm.envio':'Não foi possível enviar. Escreva para contacto@panther7.com.',
       'pie.aviso':'Todo investimento envolve risco, incluindo perda parcial ou total do capital. Resultados passados não garantem resultados futuros. Consulte a documentação de cada projeto antes de investir.'
     }
   };
@@ -354,7 +384,7 @@
   }
 
   // vistas: una sección a la vez, sin scroll largo
-  var VISTAS = ['inicio', 'como', 'proyectos', 'portal', 'seguridad', 'nosotros', 'contacto'];
+  var VISTAS = ['inicio', 'como', 'proyectos', 'seguridad', 'nosotros', 'contacto'];
   var bloques = document.querySelectorAll('[data-vista]');
   document.documentElement.classList.add('con-vistas');
   function vistaDe(id) {
@@ -384,6 +414,29 @@
   });
   window.addEventListener('popstate', desdeHash);
   desdeHash();
+
+
+  // formulario de contacto con captcha propio
+  var fc = document.getElementById('form-contacto');
+  if (fc) {
+    var capQ = document.getElementById('cap-q'), tok = '', estados = fc.querySelectorAll('.estado');
+    var nuevo = function () {
+      fetch('contacto.php', { cache: 'no-store' }).then(function (r) { return r.json(); })
+        .then(function (d) { capQ.textContent = d.q; tok = d.t; fc.r.value = ''; })
+        .catch(function () { capQ.textContent = '?'; });
+    };
+    var avisar = function (cual) { estados.forEach(function (e) { e.hidden = !(cual === 'ok' ? e.classList.contains('ok') : e.getAttribute('data-e') === cual); }); };
+    nuevo();
+    fc.addEventListener('submit', function (e) {
+      e.preventDefault(); avisar('');
+      var btn = fc.querySelector('button'); btn.disabled = true;
+      var datos = new URLSearchParams(new FormData(fc)); datos.set('t', tok);
+      fetch('contacto.php', { method: 'POST', body: datos }).then(function (r) { return r.json(); })
+        .then(function (d) { if (d.ok) { fc.reset(); avisar('ok'); } else avisar(d.e || 'envio'); nuevo(); })
+        .catch(function () { avisar('envio'); })
+        .then(function () { btn.disabled = false; });
+    });
+  }
 
   var nav = document.getElementById('nav');
   var alScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };

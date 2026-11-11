@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=4">
+<link rel="stylesheet" href="css/site.css?v=5">
 </head>
 <body>
 <a class="skip" href="#contenido" data-i18n="skip">Saltar al contenido</a>
@@ -28,7 +28,6 @@
     <a href="#inicio" data-i18n="nav.inicio">Inicio</a>
     <a href="#como" data-i18n="nav.como">Cómo funciona</a>
     <a href="#proyectos" data-i18n="nav.proy">Proyectos</a>
-    <a href="#portal" data-i18n="nav.portal">Portal</a>
     <a href="#seguridad" data-i18n="nav.seg">Seguridad</a>
     <a href="#nosotros" data-i18n="nav.nos">Nosotros</a>
     <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
@@ -83,7 +82,6 @@
   <section class="atajos" data-vista="inicio" aria-label="Explora">
     <a href="#como"><b data-i18n="nav.como">Cómo funciona</b><span data-i18n="at.como">Los pasos, de la cuenta al pago.</span></a>
     <a href="#proyectos"><b data-i18n="nav.proy">Proyectos</b><span data-i18n="at.proy">Ejemplos y un simulador.</span></a>
-    <a href="#portal"><b data-i18n="nav.portal">Portal</b><span data-i18n="at.portal">Mira tu panel por dentro.</span></a>
     <a href="#seguridad"><b data-i18n="nav.seg">Seguridad</b><span data-i18n="at.seg">Transparencia y preguntas frecuentes.</span></a>
     <a href="#nosotros"><b data-i18n="nav.nos">Nosotros</b><span data-i18n="at.nos">Quiénes somos y con quién trabajamos.</span></a>
     <a href="#contacto"><b data-i18n="nav.contacto">Contacto</b><span data-i18n="at.con">Escríbenos o llámanos.</span></a>
@@ -110,38 +108,6 @@
       <li><b data-i18n="fon.c">Tarjeta</b><span data-i18n="fon.cp">Paga en la página segura de Stripe, hasta 500 USDT por depósito.</span></li>
       <li><b data-i18n="fon.d">Transferencia internacional</b><span data-i18n="fon.dp">Desde tu banco en el exterior.</span></li>
     </ul>
-  </section>
-
-  <section class="seccion oscura vent" id="portal" data-vista="portal">
-    <div class="cabecera"><h2 data-i18n="ven.h2">Tu portal, a la vista</h2><p data-i18n="ven.p">Saldo, proyectos y movimientos en un solo lugar. Datos de ejemplo.</p></div>
-    <div class="tabs" role="tablist" aria-label="Portal">
-      <button role="tab" aria-selected="true" aria-controls="v1" id="t1" data-i18n="ven.t1">Panel</button>
-      <button role="tab" aria-selected="false" aria-controls="v2" id="t2" data-i18n="ven.t2">Proyecto</button>
-      <button role="tab" aria-selected="false" aria-controls="v3" id="t3" data-i18n="ven.t3">Wallet</button>
-    </div>
-    <div class="ventana">
-      <div class="barra"><i></i><i></i><i></i><span>portal.panther7.com</span></div>
-      <div class="vista" id="v1" role="tabpanel" aria-labelledby="t1">
-        <div class="saldo"><span data-i18n="ven.saldo">Saldo disponible</span><strong>4,250.00 <small>USDT</small></strong>
-          <svg viewBox="0 0 300 60" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,50 40,44 80,46 120,30 160,34 200,18 240,22 300,6" fill="none" stroke="#e3a82b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
-        </div>
-        <ul class="movs"><li class="titulo" data-i18n="ven.mov">Últimos movimientos</li>
-          <li><span data-i18n="ven.m1">Depósito · tarjeta</span><b class="pos">+500.00</b></li>
-          <li><span data-i18n="ven.m2">Pago de proyecto</span><b class="pos">+18.75</b></li>
-          <li><span data-i18n="ven.m3">Inversión</span><b class="neg">−1,000.00</b></li></ul>
-      </div>
-      <div class="vista" id="v2" role="tabpanel" aria-labelledby="t2" hidden>
-        <h3 data-i18n="eje.n1">Locales comerciales</h3>
-        <div class="avance"><span data-i18n="ven.avance">Avance de fondeo</span><div class="bar"><i style="width:72%"></i></div><b>72%</b></div>
-        <div class="datos"><div><span data-i18n="ven.plazo">Plazo</span><b>24 <span data-i18n="eje.meses">meses</span></b></div><div><span data-i18n="ven.pagos">Pagos</span><b data-i18n="eje.mens">mensuales</b></div></div>
-        <ul class="docs"><li class="titulo" data-i18n="ven.docs">Documentos</li><li data-i18n="ven.d1">Documentación del activo</li><li data-i18n="ven.d2">Traspaso al token (notarizado)</li></ul>
-      </div>
-      <div class="vista" id="v3" role="tabpanel" aria-labelledby="t3" hidden>
-        <div class="saldo"><span data-i18n="ven.addr">Tu dirección</span><strong class="mono">0x7a3F…c91B</strong></div>
-        <div class="botones"><span>USDT</span><span>ACH Panamá</span><span data-i18n="fon.c">Tarjeta</span></div>
-        <ul class="movs"><li class="titulo" data-i18n="ven.mov">Últimos movimientos</li><li><span data-i18n="ven.m1">Depósito · tarjeta</span><b class="pos">+500.00</b></li><li><span data-i18n="ven.m3">Inversión</span><b class="neg">−1,000.00</b></li></ul>
-      </div>
-    </div>
   </section>
 
   <section class="seccion" id="ejemplos" data-vista="proyectos">
@@ -187,6 +153,38 @@
       </div>
     </div>
     <p class="sim-aviso" data-i18n="sim.aviso">Estimación ilustrativa con una tasa de ejemplo. No garantiza resultados ni es una oferta.</p>
+  </section>
+
+  <section class="seccion oscura vent" id="portal" data-vista="como">
+    <div class="cabecera"><h2 data-i18n="ven.h2">Tu portal, a la vista</h2><p data-i18n="ven.p">Saldo, proyectos y movimientos en un solo lugar. Datos de ejemplo.</p></div>
+    <div class="tabs" role="tablist" aria-label="Portal">
+      <button role="tab" aria-selected="true" aria-controls="v1" id="t1" data-i18n="ven.t1">Panel</button>
+      <button role="tab" aria-selected="false" aria-controls="v2" id="t2" data-i18n="ven.t2">Proyecto</button>
+      <button role="tab" aria-selected="false" aria-controls="v3" id="t3" data-i18n="ven.t3">Wallet</button>
+    </div>
+    <div class="ventana">
+      <div class="barra"><i></i><i></i><i></i><span>portal.panther7.com</span></div>
+      <div class="vista" id="v1" role="tabpanel" aria-labelledby="t1">
+        <div class="saldo"><span data-i18n="ven.saldo">Saldo disponible</span><strong>4,250.00 <small>USDT</small></strong>
+          <svg viewBox="0 0 300 60" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,50 40,44 80,46 120,30 160,34 200,18 240,22 300,6" fill="none" stroke="#e3a82b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        </div>
+        <ul class="movs"><li class="titulo" data-i18n="ven.mov">Últimos movimientos</li>
+          <li><span data-i18n="ven.m1">Depósito · tarjeta</span><b class="pos">+500.00</b></li>
+          <li><span data-i18n="ven.m2">Pago de proyecto</span><b class="pos">+18.75</b></li>
+          <li><span data-i18n="ven.m3">Inversión</span><b class="neg">−1,000.00</b></li></ul>
+      </div>
+      <div class="vista" id="v2" role="tabpanel" aria-labelledby="t2" hidden>
+        <h3 data-i18n="eje.n1">Locales comerciales</h3>
+        <div class="avance"><span data-i18n="ven.avance">Avance de fondeo</span><div class="bar"><i style="width:72%"></i></div><b>72%</b></div>
+        <div class="datos"><div><span data-i18n="ven.plazo">Plazo</span><b>24 <span data-i18n="eje.meses">meses</span></b></div><div><span data-i18n="ven.pagos">Pagos</span><b data-i18n="eje.mens">mensuales</b></div></div>
+        <ul class="docs"><li class="titulo" data-i18n="ven.docs">Documentos</li><li data-i18n="ven.d1">Documentación del activo</li><li data-i18n="ven.d2">Traspaso al token (notarizado)</li></ul>
+      </div>
+      <div class="vista" id="v3" role="tabpanel" aria-labelledby="t3" hidden>
+        <div class="saldo"><span data-i18n="ven.addr">Tu dirección</span><strong class="mono">0x7a3F…c91B</strong></div>
+        <div class="botones"><span>USDT</span><span>ACH Panamá</span><span data-i18n="fon.c">Tarjeta</span></div>
+        <ul class="movs"><li class="titulo" data-i18n="ven.mov">Últimos movimientos</li><li><span data-i18n="ven.m1">Depósito · tarjeta</span><b class="pos">+500.00</b></li><li><span data-i18n="ven.m3">Inversión</span><b class="neg">−1,000.00</b></li></ul>
+      </div>
+    </div>
   </section>
 
   <section class="seccion" id="ciclo" data-vista="como">
@@ -288,6 +286,26 @@
       <a href="mailto:contacto@panther7.com"><span data-i18n="con.mail">Escríbenos</span><strong>contacto@panther7.com</strong></a>
       <a href="tel:+50760606060"><span data-i18n="con.tel">Llámanos</span><strong>6060-6060</strong></a>
     </div>
+    <form class="form" id="form-contacto" novalidate>
+      <div class="fila2">
+        <label><span data-i18n="frm.nombre">Nombre</span><input name="nombre" required maxlength="100" autocomplete="name"></label>
+        <label><span data-i18n="frm.correo">Correo</span><input name="correo" type="email" required maxlength="150" autocomplete="email"></label>
+      </div>
+      <label><span data-i18n="frm.tema">Tema</span>
+        <select name="tema"><option value="Invertir" data-i18n="frm.t1">Quiero invertir</option><option value="Proyecto" data-i18n="frm.t2">Tengo un proyecto</option><option value="Soporte" data-i18n="frm.t3">Soporte con mi cuenta</option><option value="Otro" data-i18n="frm.t4">Otro</option></select></label>
+      <label><span data-i18n="frm.msg">Mensaje</span><textarea name="mensaje" rows="5" required maxlength="3000"></textarea></label>
+      <input class="trampa" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="fila2 cap">
+        <label><span><span data-i18n="frm.cap">Verificación: ¿cuánto es</span> <b id="cap-q">…</b>?</span><input name="r" inputmode="numeric" required autocomplete="off"></label>
+        <button class="btn gold" type="submit" data-i18n="frm.enviar">Enviar mensaje</button>
+      </div>
+      <p class="estado ok" hidden data-i18n="frm.ok">¡Gracias! Recibimos tu mensaje y te responderemos pronto.</p>
+      <p class="estado mal" data-e="cap" hidden data-i18n="frm.cap_mal">La verificación no es correcta. Inténtalo de nuevo.</p>
+      <p class="estado mal" data-e="val" hidden data-i18n="frm.val">Revisa tu nombre, un correo válido y un mensaje de al menos 10 caracteres.</p>
+      <p class="estado mal" data-e="rate" hidden data-i18n="frm.rate">Enviaste varios mensajes seguidos. Prueba de nuevo más tarde.</p>
+      <p class="estado mal" data-e="envio" hidden data-i18n="frm.envio">No pudimos enviarlo. Escríbenos a contacto@panther7.com.</p>
+    </form>
+
   </section>
 
   <section class="final" data-vista="inicio como contacto">
@@ -311,6 +329,6 @@
   <p class="aviso" data-i18n="pie.aviso">Toda inversión implica riesgo, incluida la pérdida parcial o total del capital. Los resultados pasados no garantizan resultados futuros. Revisa la documentación de cada proyecto antes de invertir.</p>
   <p class="copy">© <span id="anio">2026</span> Panther7 · <a href="mailto:contacto@panther7.com">contacto@panther7.com</a> · <a href="tel:+50760606060">6060-6060</a></p>
 </footer>
-<script src="js/site.js?v=4"></script>
+<script src="js/site.js?v=5"></script>
 </body>
 </html>
