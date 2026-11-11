@@ -423,10 +423,11 @@
     var nuevo = function () {
       fetch('contacto.php', { cache: 'no-store' }).then(function (r) { return r.json(); })
         .then(function (d) { capQ.textContent = d.q; tok = d.t; fc.r.value = ''; })
-        .catch(function () { capQ.textContent = '?'; });
+        .catch(function () { capQ.textContent = '…'; avisar('envio'); });
     };
     var avisar = function (cual) { estados.forEach(function (e) { e.hidden = !(cual === 'ok' ? e.classList.contains('ok') : e.getAttribute('data-e') === cual); }); };
     nuevo();
+    capQ.parentNode.addEventListener('click', nuevo);
     fc.addEventListener('submit', function (e) {
       e.preventDefault(); avisar('');
       var btn = fc.querySelector('button'); btn.disabled = true;
