@@ -3,6 +3,7 @@
   var T = {
     es: null, // el HTML ya está en español
     en: {
+      'nav.contacto':'Contact','con.h2':'Let\'s talk','con.p':'If you have questions about how to get started, write or call us.','con.mail':'Write to us','con.tel':'Call us','pie.terminos':'Terms and conditions','pie.privacidad':'Privacy policy','pie.desembolsos':'Disbursement policy',
       'skip':'Skip to content','nav.como':'How it works','nav.porque':'Why Panther7','nav.proyectos':'For your project','nav.faq':'FAQ','nav.cuenta':'My account','nav.registro':'Create account',
       'hero.h1':'Invest in real assets, from your USDT wallet.','hero.lead':'Panther7 turns real projects into tokens so you can take part from small amounts and follow every payment with full clarity.',
       'hero.cta1':'Create my account','hero.cta2':'See how it works','hero.p1':'Verified accounts','hero.p2':'A trustee for every project','hero.p3':'Deposit with USDT, ACH Panama or card',
@@ -31,6 +32,7 @@
       'pie.aviso':'All investing involves risk, including partial or total loss of capital. Past results do not guarantee future results. Review each project\'s documentation before investing.'
     },
     pt: {
+      'nav.contacto':'Contato','con.h2':'Vamos conversar','con.p':'Se tiver dúvidas sobre como começar, escreva ou ligue para nós.','con.mail':'Escreva para nós','con.tel':'Ligue para nós','pie.terminos':'Termos e condições','pie.privacidad':'Política de privacidade','pie.desembolsos':'Política de desembolsos',
       'skip':'Ir para o conteúdo','nav.como':'Como funciona','nav.porque':'Por que a Panther7','nav.proyectos':'Para o seu projeto','nav.faq':'Perguntas','nav.cuenta':'Minha conta','nav.registro':'Criar conta',
       'hero.h1':'Invista em ativos reais, direto da sua wallet em USDT.','hero.lead':'A Panther7 transforma projetos reais em tokens para que você participe a partir de valores pequenos e acompanhe cada pagamento com total clareza.',
       'hero.cta1':'Criar minha conta','hero.cta2':'Ver como funciona','hero.p1':'Contas verificadas','hero.p2':'Um fiduciário por projeto','hero.p3':'Depósitos em USDT, ACH Panamá ou cartão',
