@@ -708,6 +708,19 @@
     });
   }
 
+
+  // menú móvil desplegable
+  var mb = document.getElementById('menu-btn'), headerNav = document.getElementById('nav');
+  if (mb) {
+    var cerrarMenu = function () { headerNav.classList.remove('abierto'); mb.setAttribute('aria-expanded', 'false'); };
+    mb.addEventListener('click', function () {
+      var on = headerNav.classList.toggle('abierto'); mb.setAttribute('aria-expanded', on ? 'true' : 'false');
+    });
+    document.querySelectorAll('.links a').forEach(function (a) { a.addEventListener('click', cerrarMenu); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrarMenu(); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 980) cerrarMenu(); });
+  }
+
   var nav = document.getElementById('nav');
   var alScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
   window.addEventListener('scroll', alScroll, { passive: true }); alScroll();
