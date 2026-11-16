@@ -47,6 +47,16 @@ $hist[] = time(); @file_put_contents($lim, implode("\n", $hist));
 $limpia = fn($s) => str_replace(["\r", "\n"], ' ', $s);
 $cuerpo = "Nombre: $nombre\nCorreo: $correo\nTema: $tema\nIP: $ip\n\n$msg\n";
 @file_put_contents($base . '/contactos.log', '[' . date('c') . "]\n$cuerpo\n---\n", FILE_APPEND | LOCK_EX);   // copia de respaldo
+// Bandeja del admin: si existe la clave compartida (~/domains/panther7.com/.p7_leads_clave), se envía también al webservice.
+// Si falla, no pasa nada: el correo y el archivo de respaldo ya tienen el mensaje.
+$leadsClave = trim((string) @file_get_contents($base . '/.p7_leads_clave'));
+if ($leadsClave !== '' && function_exists('curl_init')) {
+    $ch = curl_init('https://webservice.panther7.com/api/leads');
+    curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 6,
+        CURLOPT_HTTPHEADER => ['X-Leads-Secret: ' . $leadsClave, 'Accept: application/json'],
+        CURLOPT_POSTFIELDS => ['name' => $nombre, 'email' => $correo, 'topic' => $tema, 'message' => $msg, 'ip' => $ip]]);
+    @curl_exec($ch); curl_close($ch);
+}
 $cab = "From: Panther7 web <" . DESDE . ">\r\nReply-To: " . $limpia($correo) . "\r\nContent-Type: text/plain; charset=UTF-8\r\n";
 $ok = @mail(DESTINO, '=?UTF-8?B?' . base64_encode('Contacto web: ' . $limpia($tema ?: 'consulta')) . '?=', $cuerpo, $cab);
 salir($ok ? ['ok' => true] : ['e' => 'envio'], $ok ? 200 : 500);
