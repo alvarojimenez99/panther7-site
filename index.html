@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=9">
+<link rel="stylesheet" href="css/site.css?v=10">
 </head>
 <body>
 <a class="skip" href="#contenido" data-i18n="skip">Saltar al contenido</a>
@@ -112,18 +112,23 @@
     </div>
     <p class="tabl-nota" data-i18n="tbl.nota">Ejemplo ilustrativo: no son proyectos ni cifras reales.</p>
   </section>
-  <section class="seccion asis-sec" id="asistente" data-vista="inicio invertir" aria-label="Asistente con IA">
+  <section class="seccion asis-sec" id="asistente" data-vista="inicio invertir" aria-label="Asistente del portal">
     <div class="asis-caja">
       <div class="asis-txt">
-        <h2 data-i18n="asi.h2">Un asistente que habla tu idioma</h2>
-        <p data-i18n="asi.p">Pregúntale lo que quieras sobre Panther7 y recibe respuesta al instante, en español, inglés o portugués, a cualquier hora y desde cualquier página.</p>
-        <button type="button" class="btn gold grande" data-asis-abrir data-i18n="asi.cta">Hablar con el asistente</button>
-        <p class="asis-nota" data-i18n="asi.nota">Asistente con IA. No ofrece asesoría financiera.</p>
+        <h2 data-i18n="asi.h2">Tu asistente, dentro del portal</h2>
+        <p data-i18n="asi.p">Pregúntale en español, inglés o portugués cómo depositar, retirar o invertir, o cuánto saldo tienes. Responde al instante y te lleva directo a la pantalla correcta.</p>
+        <ul class="asis-lista">
+          <li data-i18n="asi.l1">Disponible en los tres idiomas del portal</li>
+          <li data-i18n="asi.l2">Consulta tu saldo y tus movimientos</li>
+          <li data-i18n="asi.l3">Te guía paso a paso y te pasa con el equipo si no tiene respuesta</li>
+        </ul>
       </div>
-      <div class="asis-demo" aria-label="Ejemplos">
-        <button type="button" data-asis-pregunta lang="es">¿Cómo funciona la tokenización?</button>
-        <button type="button" data-asis-pregunta lang="en">How do I fund my wallet?</button>
-        <button type="button" data-asis-pregunta lang="pt">Posso vender meus tokens?</button>
+      <div class="asis-demo" role="img" aria-label="Ejemplo de conversación con el asistente del portal">
+        <div class="asis-m yo" lang="es">¿Cómo deposito?</div>
+        <div class="asis-m bot"><span data-i18n="asi.bot1">Con USDT o por ACH desde un banco de Panamá. Cada USDT equivale a 1 USDT en tu cuenta.</span><b class="asis-ir" data-i18n="asi.ir">Ir a Depósito</b></div>
+        <div class="asis-m yo" lang="en">How much do I have?</div>
+        <div class="asis-m bot" lang="en"><span>Available: 4,250.00 USDT</span></div>
+        <p class="asis-nota" data-i18n="asi.nota">Ejemplo ilustrativo del asistente del portal.</p>
       </div>
     </div>
   </section>
@@ -479,7 +484,6 @@
   <p class="aviso" data-i18n="pie.aviso">Toda inversión implica riesgo, incluida la pérdida parcial o total del capital. Los resultados pasados no garantizan resultados futuros. Revisa la documentación de cada proyecto antes de invertir.</p>
   <p class="copy">© <span id="anio">2026</span> Panther7 · <a href="mailto:contacto@panther7.com">contacto@panther7.com</a> · <a href="tel:+50760606060">6060-6060</a></p>
 </footer>
-<script src="js/site.js?v=9"></script>
-<script src="js/asistente.js?v=1"></script>
+<script src="js/site.js?v=10"></script>
 </body>
 </html>
