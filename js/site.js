@@ -34,6 +34,28 @@
       'cif.2':'Verified investors',
       'cif.3':'USDT tokenized',
       'cif.4':'Payments credited on time',
+      'tbl.h2':'All your projects, on a single board',
+      'tbl.p':'Funding progress and payment status, at a glance.',
+      'tbl.c1':'Project',
+      'tbl.c2':'Sector',
+      'tbl.c3':'Progress',
+      'tbl.c4':'Status',
+      'tbl.n1':'Retail units',
+      'tbl.n1s':'Real estate',
+      'tbl.n2':'Cocoa farm',
+      'tbl.n2s':'Agriculture',
+      'tbl.n3':'Solar park',
+      'tbl.n3s':'Energy',
+      'tbl.n4':'Delivery fleet',
+      'tbl.n4s':'Logistics',
+      'tbl.n5':'Coffee roastery',
+      'tbl.n5s':'Startup',
+      'tbl.e1':'Funding',
+      'tbl.e2':'Paying',
+      'tbl.e3':'Coming soon',
+      'tbl.nota':'Illustrative example: not real projects or figures.',
+      'fi.q4':'Can I sell my tokens before the project ends?',
+      'fi.a4':'You can list your tokens for sale on the portal\'s secondary market, and other verified investors can buy them. We do not guarantee there will be a buyer or at what price.',
       'fon.h2':'Fund it your way',
       'fon.p':'Everything is credited 1 to 1 in USDT.',
       'fon.ap':'Send from your crypto wallet and report your transfer.',
@@ -310,6 +332,28 @@
       'cif.2':'Investidores verificados',
       'cif.3':'USDT tokenizados',
       'cif.4':'Pagamentos creditados em dia',
+      'tbl.h2':'Todos os seus projetos, em um só painel',
+      'tbl.p':'Andamento da captação e status dos pagamentos, de relance.',
+      'tbl.c1':'Projeto',
+      'tbl.c2':'Setor',
+      'tbl.c3':'Andamento',
+      'tbl.c4':'Status',
+      'tbl.n1':'Lojas comerciais',
+      'tbl.n1s':'Imobiliário',
+      'tbl.n2':'Fazenda de cacau',
+      'tbl.n2s':'Agricultura',
+      'tbl.n3':'Parque solar',
+      'tbl.n3s':'Energia',
+      'tbl.n4':'Frota de entregas',
+      'tbl.n4s':'Logística',
+      'tbl.n5':'Torrefação de café',
+      'tbl.n5s':'Empreendimento',
+      'tbl.e1':'Captando',
+      'tbl.e2':'Pagando',
+      'tbl.e3':'Em breve',
+      'tbl.nota':'Exemplo ilustrativo: não são projetos nem números reais.',
+      'fi.q4':'Posso vender meus tokens antes do fim do projeto?',
+      'fi.a4':'Você pode colocar seus tokens à venda no mercado secundário do portal, e outros investidores verificados podem comprá-los. Não garantimos que haverá comprador nem por qual preço.',
       'fon.h2':'Deposite do seu jeito',
       'fon.p':'Tudo é creditado 1 para 1 em USDT.',
       'fon.ap':'Envie da sua wallet cripto e informe o envio.',
@@ -725,4 +769,33 @@
   var alScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
   window.addEventListener('scroll', alScroll, { passive: true }); alScroll();
   var a = document.getElementById('anio'); if (a) a.textContent = new Date().getFullYear();
+})();
+
+/* Tablero: las letras "giran" al entrar en pantalla (respeta reducir movimiento) */
+(function () {
+  var t = document.getElementById('tabl');
+  if (!t || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var L = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789%';
+  function girar(el, retardo) {
+    var fin = el.textContent, n = fin.length, ini = null;
+    el.style.minWidth = el.offsetWidth + 'px';
+    function paso(ts) {
+      if (ini === null) ini = ts + retardo;
+      var p = (ts - ini) / 700;
+      if (p < 0) { el.textContent = fin.replace(/\S/g, ' '); return requestAnimationFrame(paso); }
+      if (p >= 1) { el.textContent = fin; el.style.minWidth = ''; return; }
+      var o = '';
+      for (var k = 0; k < n; k++) o += (fin[k] === ' ' || k < p * n) ? fin[k] : L[Math.floor(Math.random() * L.length)];
+      el.textContent = o; requestAnimationFrame(paso);
+    }
+    requestAnimationFrame(paso);
+  }
+  new IntersectionObserver(function (es, ob) {
+    if (!es[0].isIntersecting) return;
+    ob.disconnect();
+    t.querySelectorAll('.tabl-fila').forEach(function (f, r) {
+      f.querySelectorAll('.flap').forEach(function (c, k) { girar(c, r * 160 + k * 60); });
+    });
+  }, { threshold: 0.35 }).observe(t);
 })();
